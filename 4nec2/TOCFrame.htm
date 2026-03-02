@@ -1,0 +1,320 @@
+<html>
+
+<head>
+<meta name="Microsoft Theme 2.00" content="blueprnt 100">
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<base target=MainFrame>
+<title>4nec2 antenna modeler and optimizer</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Century Gothic";
+	panose-1:2 11 5 2 2 2 2 2 2 4;}
+@font-face
+	{font-family:"Comic Sans MS";
+	panose-1:3 15 7 2 3 3 2 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Century Gothic";
+	color:#003366;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Century Gothic";
+	color:#330099;
+	font-weight:normal;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Century Gothic";
+	color:#3366FF;
+	font-weight:normal;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Century Gothic";
+	color:#9900FF;
+	font-weight:normal;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Century Gothic";
+	color:#330099;
+	font-weight:normal;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Century Gothic";
+	color:#3366FF;
+	font-weight:normal;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:"Century Gothic";
+	color:#9900FF;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Arial;
+	color:white;
+	font-weight:bold;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Comic Sans MS";
+	font-weight:bold;
+	font-style:italic;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:0in;
+	margin-right:132.75pt;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin-top:0in;
+	margin-right:96.75pt;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:#9900FF;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#3366FF;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body bgcolor=silver background="TOCFrame_files/image001.jpg" lang=EN-US
+link="#9900FF" vlink="#3366FF">
+
+<div class=Section1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:95%;border-collapse:collapse'>
+
+ <tr style='height:51.75pt'>
+
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt;
+  height:51.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:11.0pt;font-family:Arial'><img width=102 height=57
+  src="TOCFrame_files/image003.jpg"></span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:5.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;background:red;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeading7><span style='font-size:10.0pt'>Information</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="Home.htm">Home</a></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+
+ </tr>
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><u><span style='font-size:10.0pt;font-family:Arial'><a
+  href="https://groups.io/g/4NEC2/">New Forum</a></span></u></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="tutorials.htm" title="List and download Nec2 support files">4nec2
+  tutorials</a></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="screenshot.htm">Screenshots</a></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="features.htm">Features</a></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="_ReleaseNotes.htm">Release Notes</a></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="_KnownBugs.htm">Known Bugs</a></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="faq.htm">FAQ</a></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;background:#3366FF;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeading7><span style='font-size:10.0pt'>Downloads</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="https://qsl.net/4nec2/4nec2.zip"
+  title="4nec2 standard runtime package">4nec2 (setup.exe)</a></span></p>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="https://qsl.net/4nec2/4nec2zip.zip"
+  title="Real-time 3D extension to use with standard package">4nec2 (zip-file)</a>&nbsp;&nbsp;</span></p>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="supfiles.htm" title="List and download Nec2 support files">Support-files</a></span></p>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="https://qsl.net/4nec2/gp400win32.zip">GnuPlot plotting</a></span></p>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="http://voacap.com" target="_top"
+  title="ItsHF (HFwin32) propragion prediction package">ItsHF / Hfwin32 </a></span></p>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="Links.htm">Links</a></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><a
+  href="https://qsl.net/4nec2/gp400win32.zip" target="_top" title=""></a></span></p>
+  </td>
+ </tr>
+
+</table>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman";color:windowtext'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,448 @@
+<html>
+
+<head>
+<meta name="Microsoft Theme 2.00" content="blueprnt 001">
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>4nec2 antenna modeler and optimizer</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Century Gothic";
+	panose-1:2 11 5 2 2 2 2 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Century Gothic";
+	color:#003399;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:24.0pt;
+	font-family:"Century Gothic";
+	color:#660066;
+	font-weight:normal;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Century Gothic";
+	color:#660066;
+	font-weight:normal;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Century Gothic";
+	color:#660066;
+	font-weight:normal;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Century Gothic";
+	color:#660066;
+	font-weight:normal;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Century Gothic";
+	color:#660066;
+	font-weight:normal;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:"Century Gothic";
+	color:#660066;
+	font-weight:normal;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+a:link, span.MsoHyperlink
+	{color:#3366FF;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#9900FF;
+	text-decoration:underline;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+<meta name=description
+content="NEC2/4 based Antenna modeler, analyzer and optimizer.">
+<meta name=keywords
+content="4nec2, antenna modeling, antenna software, &#13;&#10;antenna optimizer, genetic algorithm, GA, transmission line, surface patch, &#13;&#10;mom, smith chart, multinec, far field, near field, nec2, nec4, nec-2, nec-4, &#13;&#10;nec2d, nec4d, eznec, nec4win, mmana, hfwin32, voacap, icepac, itshf">
+<meta name=robots content="index, follow">
+<meta name=revisit-after content="3 month">
+</head>
+
+<body bgcolor=white background="Home_files/image001.gif" lang=EN-US
+link="#3366FF" vlink="#9900FF">
+
+<div class=Section1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=579
+ style='width:434.1pt;margin-left:-12.75pt;border-collapse:collapse'>
+ <tr>
+  <td width=209 valign=top style='width:156.65pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;font-family:Arial'><a href="Home_files/image003.gif"
+  title="Click to enlarge"><span style='color:blue;text-decoration:none'><img
+  border=0 width=151 height=142 src="Home_files/image004.gif"></span></a></span></p>
+  </td>
+  <td width=173 colspan=3 valign=top style='width:129.75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:24.0pt'>&nbsp;</span></i></b></p>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:36.0pt;font-family:Arial;color:gray'>4nec2</span></b></p>
+  </td>
+  <td width=197 valign=top style='width:147.7pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;font-family:Arial'><a href="Home_files/image006.gif"
+  title="Real-time 3D viewer"><span style='text-decoration:none'><img border=0
+  width=151 height=142 src="Home_files/image005.gif"></span></a></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=579 colspan=5 valign=top style='width:434.1pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=579 colspan=5 valign=top style='width:434.1pt;background:#CCFFCC;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <h2 align=center style='text-align:center'><i><span style='font-family:Arial'>NEC
+  based antenna modeler and optimizer</span></i></h2>
+  <p class=MsoNormal align=center style='text-align:center'><b><i>by Arie Voors
+  <!--  a href="mailto:abc@def.net?subject=4nec2%20modeler:">Arie Voors</a  --></i></b></p>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=579 colspan=5 valign=top style='width:434.1pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>4nec2 is
+  a completely free Nec2, Nec4 and windows based tool for creating, viewing, optimizing
+  and checking 2D and 3D style antenna geometry structures and generate,
+  display and/or compare near/far-field radiation patterns for both the
+  starting and experienced antenna modeler. </span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>When
+  running frequency sweeps, linear or logarithmic style SWR, Gain, F/B-ratio
+  and impedance line-charts are produced. With the included Optimizer and
+  Sweeper one is able to optimize antenna- and/or other environment-variables
+  for Gain, resonance, SWR, efficiency and/or F/B, F/R-ratio. With the sweeper
+  one is able to graphically display the effect of changing one or more of
+  these variables for a specified range of values/frequencies.</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>For the
+  starting modeler a graphically based 3D geometry-editor is included which
+  requires no additional NEC knowledge while still enabling you to create and
+  visualize and compare current-distribution, far/near-field patterns and
+  Gain/SWR charts. More experienced modelers can use the gradient style and/or
+  the genetic algorithm based optimizers to improve their designs.</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>To list
+  some of its features or see some screenshots, click the appropriate links
+  below on the left. To download and try the software click upmost two links
+  below on the right (setup.exe) or the third link for a single zip containing
+  all separate files. <br>
+  <br>
+  NOTE: When experiencing problems running 4nec2, please consult the 'List
+  known bugs' page on this website for latest news. </span></p>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;background:red;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><b><span style='font-family:Arial;color:white'>Information</span></b></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;background:#3366FF;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:Arial;color:white'>Downloads</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="features.htm" title="List 4nec2 features">List features</a></span></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><b><span
+  style='font-size:11.0pt;font-family:Arial'>*</span></b></p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="https://qsl.net/4nec2/4nec2.zip"
+  title="4nec2 standard package as setup.exe">Latest 4nec2 version</a> (5.9.3)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="screenshot.htm" title="See some 4nec2 screenshots">View screenshots</a></span></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><b><span
+  style='font-size:11.0pt;font-family:Arial'>*</span></b></p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="https://qsl.net/4nec2/4nec2zip.zip"
+  title="4nec2 files in a zip, no installer.">4nec2 files as a ZIP (no install)</a>
+  (5.9.3)&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="_ReleaseNotes.htm" title="List changes for recent versions">Show
+  release notes</a> </span></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="_KnownBugs.htm" title="List know bugs for latest version">List known
+  bugs</a> </span></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="supfiles.htm" title="List and download Nec2 support files">(4)Nec2
+  support files</a>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="faq.htm" title="Frequently asked questions">FAQ</a> </span></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="https://qsl.net/4nec2/gp400win32.zip" target="_top"
+  title="gnuplot 2D and 3D charting/plotting package">Gnuplot 2D/3D plotting</a></span>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="tutorials.htm" title="List and download Nec2 support files">4NEC2
+  Tutorials</a></span></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><!--a href="https://elbert.its.bldrdoc.gov/pc_hf/hfwin32.html" target="_top"
+  title="ItsHF (HFwin32) propragion prediction package">ItsHF propagation prediction</a--><a
+  href="http://voacap.com" target="_top"
+  title="ItsHF (HFwin32) propragion prediction package">ItsHF propagation
+  prediction</a></span>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=IT
+  style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="Links.htm" title="Antenna modeling links and other stuff">Links and
+  other stuff</a></span></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'><a
+  href="https://qsl.net/4nec2/Artikel.zip"
+  title="Dutch ham-magazine article">HAM-magazine article in Dutch</a></span>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width=268 colspan=2 valign=top style='width:200.9pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+  <td width=287 colspan=2 valign=top style='width:215.2pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:Arial'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width=579 colspan=5 valign=top style='width:434.1pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoBodyText align=center style='text-align:center'><span
+  style='color:#003399'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width=579 colspan=5 valign=top style='width:434.1pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoBodyText align=center style='text-align:center'><b><span
+  style='font-size:12.0pt;color:navy'><a href="https://www.tapatalk.com/groups/fornectoo/" target="_blank">4nec2
+  Forum</a></span></b></p>
+  </td>
+ </tr>
+
+ <tr>
+  <td width=579 colspan=5 valign=top style='width:434.1pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoBodyText align=center style='text-align:center'><b><span
+  style='font-size:12.0pt;color:navy'><a href="https://groups.io/g/4NEC2/" target="_blank">New 4nec2
+  Forum</a></span></b></p>
+  </td>
+ </tr>
+
+
+ <tr>
+
+  <td width=579 colspan=5 valign=top style='width:434.1pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><marquee width="201" height="21">
+&nbsp; last revised: Apr 28, 2021 (see release notes)</marquee><o:p></o:p></span></p>
+  <p class=MsoNormal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+
+ </tr>
+
+ <tr>
+  <td width=579 colspan=5 valign=top style='width:434.1pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoBodyText><span style='color:#003399'>&nbsp;</span></p>
+  </td>
+ </tr>
+
+
+ <tr>
+ </tr>
+
+ <u1:p></u1:p><u2:p></u2:p>
+
+ <tr style='mso-yfti-irow:22;mso-yfti-lastrow:yes'>
+
+  <td width=209 style='width:156.65pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Times New Roman";color:windowtext'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=59 style='width:44.25pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Times New Roman";color:windowtext'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=24 style='width:.25in;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Times New Roman";color:windowtext'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=90 style='width:67.5pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Times New Roman";color:windowtext'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=197 style='width:147.7pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-family:"Times New Roman";color:windowtext'><o:p>&nbsp;</o:p></span></p>
+  </td>
+
+ </tr>
+
+</table>
+
+
+</div>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
